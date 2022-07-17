@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import CrownList from '../components/CrownList';
 import LoadingIndicator from '../components/LoadingIndicator';
 import RankList from '../components/RankList';
+import Image from 'next/image';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,12 +44,15 @@ export default function Home() {
       </Head>
 
       <main className='container items-center d-flex flex-column text-center'>
-        <h1 className='mt-5 mx-auto'>Stumble Guys Ranking</h1>
+        <div className='pt-5 mx-auto'>
+          <Image src='/logo.png' alt='Stumble Guys Logo' layout='fixed' width={250} height={150} />
+        </div>
+        <h1 className='mx-auto'>Rankings</h1>
         <p className='mb-5'>by Rahmat Agung Julians</p>
 
         <LoadingIndicator isLoading={isLoading} />
 
-        <div className='row mb-4'>
+        <div className='row'>
           <div className='col'>
             { !isLoading && <RankList allRank={allRank} /> }
           </div>
