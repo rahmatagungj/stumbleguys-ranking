@@ -52,8 +52,8 @@ export default function Home() {
 
         <LoadingIndicator isLoading={isLoading} />
 
-        <div className='row'>
-          <div className='col'>
+        <div className='row mb-5'>
+          <div className='col mb-5 mb-md-0'>
             { !isLoading && <RankList allRank={allRank} /> }
           </div>
           <div className='col'>
